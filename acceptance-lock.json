@@ -1,0 +1,12 @@
+{
+  "host": {
+    "version": "0.12.3",
+    "git_sha": "fe03d8eaa83fb47055125d8868ef4bdfc8832d0c",
+    "archive_sha256": "c3e0f1dab7672bceba74151793357dbc3cae2d6562dedb093f57e042bbb51725"
+  },
+  "plugin": {
+    "slug": "subtitle-studio",
+    "version": "0.1.0",
+    "package_sha256": "8a563310efe89ff0f7472940225d57ccc46af5e25fde367eb8e0129450bc13ab"
+  }
+}

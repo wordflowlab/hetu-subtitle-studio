@@ -1,0 +1,18 @@
+{
+  "duration_ms": 6500,
+  "lines": [
+    {
+      "text": "Why is this letter unsigned?",
+      "start_ms": 100,
+      "end_ms": 1623
+    },
+    {
+      "text": "An old key lies in the envelope.",
+      "start_ms": 2800,
+      "end_ms": 4549
+    }
+  ],
+  "sha256": "1757da79adb3d242b99a3d9451691b6c0ac24cb123121df19f27fbbee59a2f90",
+  "source": "本机Samantha系统语音与本项目原创绘画，经Chromium MediaRecorder组成隔离预演样本；不是配音表演认可",
+  "generator_sha256": "4c4c72f2945eeec1524a6924f25b8ea395ad7137dee6142cfaf43a14de7aae73"
+}
