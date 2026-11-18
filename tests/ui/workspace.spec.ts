@@ -215,6 +215,7 @@ test("真实Electron审阅、专业操作、导出、冲突保留与关闭重开
       path: info.outputPath("reduced-transparency.png"),
       fullPage: true,
     });
+    await page.getByRole("button", { name: "字幕与播放", exact: true }).click();
     await page.locator("summary").filter({ hasText: "高级" }).click();
     await page
       .getByRole("button", { name: "编辑专业数据", exact: true })

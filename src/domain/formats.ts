@@ -35,10 +35,11 @@ export function encodeSubtitles(cues:Subtitle[],format:string){
  const ordered=[...cues].sort((a,b)=>a.start_ms-b.start_ms||a.end_ms-b.end_ms),losses=new Set<string>();
  const plain=(text:string)=>{need(!text.includes('\u0000'),'字幕不能包含空字节。');return text.replace(/\r\n?/g,'\n');};
  if(format==='ass'){
-  const rows=ordered.map(c=>{if(/[\\{}]/.test(c.text))losses.add('ASS控制符以全角字符表示，避免被解释为排版或绘图命令。');if(c.start_ms%10||c.end_ms%10)losses.add('ASS百分之一秒精度：开始向下取整、结束向上取整。');const body=plain(c.text).replace(/\\/g,'＼').replace(/\{/g,'｛').replace(/\}/g,'｝').replace(/\n/g,'\\N');const speaker=c.speaker.replace(/[,\r\n]/g,' ');return `Dialogue: 0,${formatTime(c.start_ms,'ass')},${formatTime(Math.min(86400000,Math.ceil(c.end_ms/10)*10),'ass')},Default,${speaker},0,0,0,,${body}`;});
+  const rows=ordered.map(c=>{if(/[\\{}]/.test(c.text))losses.add('ASS控制符以全角字符表示，避免被解释为排版或绘图命令。');if(c.start_ms%10||c.end_ms%10)losses.add('ASS百分之一秒精度：开始向下取整、结束向上取整。');if(/[,\r\n]/.test(c.speaker))losses.add('ASS说话者字段的逗号或换行转换为空格。');const body=plain(c.text).replace(/\\/g,'＼').replace(/\{/g,'｛').replace(/\}/g,'｝').replace(/\n/g,'\\N');const speaker=c.speaker.replace(/[,\r\n]/g,' ');return `Dialogue: 0,${formatTime(c.start_ms,'ass')},${formatTime(Math.min(86400000,Math.ceil(c.end_ms/10)*10),'ass')},Default,${speaker},0,0,0,,${body}`;});
   return {content:'[Script Info]\nScriptType: v4.00+\nPlayResX: 1920\nPlayResY: 1080\n\n[V4+ Styles]\nFormat: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding\nStyle: Default,Arial,48,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,40,40,40,1\n\n[Events]\nFormat: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text\n'+rows.join('\n')+'\n',losses:[...losses]};
  }
  need(format==='srt'||format==='vtt','未知字幕导出格式。');
+ if(ordered.some(c=>c.speaker))losses.add('SRT／基础WebVTT导出未编码说话者字段，原工程保留此信息。');
  const rows=ordered.map((c,index)=>{let body=plain(c.text);if(format==='vtt')body=body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');if(/\n\s*\n/.test(body)){body=body.replace(/\n\s*\n/g,'\n');losses.add('条目内空白段合并为单换行，避免被解析为新字幕块。');}return `${index+1}\n${formatTime(c.start_ms,format)} --> ${formatTime(c.end_ms,format)}\n${body}`;});
  return {content:(format==='vtt'?'WEBVTT\n\n':'')+rows.join('\n\n')+'\n',losses:[...losses]};
 }

@@ -12,7 +12,13 @@
       "end_ms": 4549
     }
   ],
-  "sha256": "1757da79adb3d242b99a3d9451691b6c0ac24cb123121df19f27fbbee59a2f90",
-  "source": "本机Samantha系统语音与本项目原创绘画，经Chromium MediaRecorder组成隔离预演样本；不是配音表演认可",
-  "generator_sha256": "4c4c72f2945eeec1524a6924f25b8ea395ad7137dee6142cfaf43a14de7aae73"
+  "sha256": "b6849f1c733c92c7ea2b17df6fed75ac2b429934961be3870d3fe38ecef51eb6",
+  "source": "本机Samantha系统语音与本项目原创绘画，经FFmpeg组成6.5秒H.264/AAC隔离预演样本；不是配音表演认可",
+  "generation": {
+    "ffmpeg_version": "9.0",
+    "video_frames": 156,
+    "audio_codec": "aac",
+    "duration_ms": 6500,
+    "full_decode_verified": true
+  }
 }
