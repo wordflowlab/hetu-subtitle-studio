@@ -156,6 +156,7 @@ test("真实Electron审阅、专业操作、导出、冲突保留与关闭重开
         });
         for (const [viewIndex, viewName] of config.tabs.entries()) {
           await tab(viewIndex);
+          if(viewIndex===0){const video=page.getByLabel("固定媒体播放",{exact:true});await expect(video).toBeVisible();await expect.poll(()=>video.evaluate((v:HTMLVideoElement)=>v.readyState)).toBeGreaterThanOrEqual(2);}
           await page.screenshot({
             path: info.outputPath(
               theme + "-" + width + "-view-" + viewIndex + ".png",
