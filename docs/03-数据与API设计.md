@@ -11,6 +11,7 @@
 | basis_refs | array | 是 |
 | media | object | 是 |
 | reading | object | 是 |
+| imports | array | 是 |
 | tracks | array | 是 |
 | cues | array | 是 |
 | notes | array | 是 |
