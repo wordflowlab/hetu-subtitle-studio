@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-11-18T15:48:35.492Z",
+  "plugin_id": "org.wordflowlab.subtitle-studio",
+  "package_sha256": "5c9baeffe35b436d7504752db9fa5c2613fa65418fcbea921c4bfef9dd5a84d8",
+  "host_version": "hetu 0.12.4",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "actions": [
+    "skills.read",
+    "save_project",
+    "preview_import",
+    "import_subtitles",
+    "cue_digest",
+    "put_note",
+    "shift_track",
+    "check_subtitles",
+    "locate_time",
+    "export_subtitles",
+    "put_track",
+    "put_cue",
+    "list_projects",
+    "get_source",
+    "get_operation",
+    "get_basis",
+    "build_context",
+    "create_handoff",
+    "compare_versions",
+    "export_project",
+    "remove_note",
+    "remove_cue",
+    "remove_track",
+    "get_project"
+  ],
+  "skill_resources": 3,
+  "lifecycle": [
+    "install",
+    "disable",
+    "enable",
+    "uninstall",
+    "install"
+  ],
+  "fixed_history": true,
+  "CAS": true,
+  "original_key_recovery": true,
+  "artifact_sha256_verified": true,
+  "limits": [
+    "没有付费模型、作者采纳、定稿或Windows/Linux专业运行验收"
+  ]
+}

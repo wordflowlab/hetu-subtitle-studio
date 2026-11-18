@@ -1,0 +1,10 @@
+[
+  {
+    "test": "machine",
+    "exit_code": 0
+  },
+  {
+    "test": "ui",
+    "exit_code": 0
+  }
+]

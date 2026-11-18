@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-18",
+  "plugin_id": "org.wordflowlab.subtitle-studio",
+  "package_sha256": "5c9baeffe35b436d7504752db9fa5c2613fa65418fcbea921c4bfef9dd5a84d8",
+  "host_version": "hetu 0.12.4",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "tabs": [
+    "字幕与播放",
+    "双语对齐",
+    "时间与阅读检查",
+    "区间意见",
+    "接续创作"
+  ],
+  "empty_state": true,
+  "professional_actions": true,
+  "artifact_files": [
+    "字幕.ass",
+    "字幕.srt",
+    "字幕.vtt"
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "widths": [
+    1360,
+    760
+  ],
+  "reduced_transparency": true,
+  "CAS_preserves_input": true,
+  "explicit_rebase": true,
+  "close_reopen": true,
+  "dirty_buffer_restore": true,
+  "page_errors": [],
+  "limits": [
+    "原生窗口材质、系统输入法及Windows/Linux未由本测试证明"
+  ]
+}
